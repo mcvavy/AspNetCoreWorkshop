@@ -12,6 +12,7 @@
   <ItemGroup>
     <Content Include="nlog.config">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="testsettings.json" />
   </ItemGroup>
