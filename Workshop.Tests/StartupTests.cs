@@ -1,11 +1,12 @@
-﻿using NUnit.Framework;
+﻿using System.Threading.Tasks;
+using NUnit.Framework;
 
 namespace Workshop.Tests
 {
     class StartupTests
     {
         [Test]
-        public void ShouldHaveSwaggerEndpoint()
+        public async Task ShouldHaveSwaggerEndpoint()
         {
             //???
         }
