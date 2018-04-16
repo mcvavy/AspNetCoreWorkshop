@@ -19,6 +19,11 @@ namespace Workshop.Repositories
             return Blogs;
         }
 
+        public Blog Read(int id)
+        {
+            return Blogs.Single(blog => blog.Id == id);
+        }
+
         public Blog Create(Blog blog)
         {
             if (blog.Id <= 0)
@@ -29,11 +34,5 @@ namespace Workshop.Repositories
 
             return blog;
         }
-
-        public void Delete(int id)
-        {
-            Blogs.RemoveAll(blog => blog.Id == id);
-        }
-
     }
 }

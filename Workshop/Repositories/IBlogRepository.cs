@@ -7,10 +7,8 @@ namespace Workshop.Repositories
     {
         IEnumerable<Blog> Read();
 
+        Blog Read(int id);
 
         Blog Create(Blog blog);
-
-
-        void Delete(int id);
     }
 }
