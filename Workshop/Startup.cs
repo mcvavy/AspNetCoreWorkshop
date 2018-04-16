@@ -1,8 +1,14 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Workshop.Middleware;
+using Workshop.Repositories;
+using Workshop.Settings;
 
 namespace Workshop
 {
@@ -17,7 +23,6 @@ namespace Workshop
 
         public void ConfigureServices(IServiceCollection services)
         {
-            
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
