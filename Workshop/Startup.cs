@@ -26,6 +26,8 @@ namespace Workshop
             services.Configure<BlogSettings>(_configuration.GetSection("BlogSettings"));
             services.Configure<BlogSettings>(settings => settings.Title = "New title");
 
+            services.AddTransient<IBlogRepository, BlogRepository>();
+
             services.AddMvc();
         }
 
