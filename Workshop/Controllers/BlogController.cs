@@ -11,15 +11,18 @@ namespace Workshop.Controllers
     public class BlogController : Controller
     {
         private readonly IOptions<BlogSettings> _blogOptions;
+        private readonly ILogger<BlogController> _logger;
 
-        public BlogController(IOptions<BlogSettings> blogOptions)
+        public BlogController(IOptions<BlogSettings> blogOptions, ILogger<BlogController> logger)
         {
             _blogOptions = blogOptions;
+            _logger = logger;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
+            _logger.LogInformation($"{_blogOptions.Value.Title} - {_blogOptions.Value.BlogType}");
             return Ok($"{_blogOptions.Value.Title} - {_blogOptions.Value.BlogType}");
         }
     }
