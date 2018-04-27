@@ -21,14 +21,17 @@ namespace Workshop
             _configuration = configuration;
         }
 
-        public void ConfigureServices(IServiceCollection services)
+        public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.Configure<BlogSettings>(_configuration.GetSection("BlogSettings"));
             services.Configure<BlogSettings>(settings => settings.Title = "New title");
 
-            services.AddTransient<IBlogRepository, BlogRepository>();
-
             services.AddMvc();
+
+            var containerBuilder = new ContainerBuilder();
+            containerBuilder.Populate(services);
+            containerBuilder.RegisterType<BlogRepository>().As<IBlogRepository>();
+            return new AutofacServiceProvider(containerBuilder.Build());
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
