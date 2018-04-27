@@ -33,6 +33,9 @@ namespace Workshop
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseMiddleware<WorkshopMiddleware>();
+            app.Map("/workshop", appBuilder => appBuilder.Run(ctx => ctx.Response.WriteAsync("MapMiddleware")));
+
             app.UseMvc();
         }
     }
