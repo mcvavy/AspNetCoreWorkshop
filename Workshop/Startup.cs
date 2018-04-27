@@ -23,7 +23,7 @@ namespace Workshop
 
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddMvc();
         }
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -33,10 +33,7 @@ namespace Workshop
                 app.UseDeveloperExceptionPage();
             }
 
-            app.Run(async (context) =>
-            {
-                await context.Response.WriteAsync("Hello World!");
-            });
+            app.UseMvc();
         }
     }
 }
