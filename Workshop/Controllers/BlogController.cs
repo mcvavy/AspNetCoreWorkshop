@@ -10,14 +10,17 @@ namespace Workshop.Controllers
     [Route("api/blog")]
     public class BlogController : Controller
     {
-        public BlogController()
+        private readonly IOptions<BlogSettings> _blogOptions;
+
+        public BlogController(IOptions<BlogSettings> blogOptions)
         {
+            _blogOptions = blogOptions;
         }
 
         [HttpGet]
         public IActionResult Get()
         {
-            return Ok("MVC is working !!!");
+            return Ok($"{_blogOptions.Value.Title} - {_blogOptions.Value.BlogType}");
         }
     }
 }

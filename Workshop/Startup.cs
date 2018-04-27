@@ -23,6 +23,9 @@ namespace Workshop
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.Configure<BlogSettings>(_configuration.GetSection("BlogSettings"));
+            services.Configure<BlogSettings>(settings => settings.Title = "New title");
+
             services.AddMvc();
         }
 
