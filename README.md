@@ -1,5 +1,5 @@
 # What you'll learn
-An hour-long META 2018 workshop about what's new and different in ASP.NET Core 2.0 compared to .NET Framework. It begins with a little background with a little background on .NET Core framework and CLI   
+An hour-long META 2018 workshop about what's new and different in ASP.NET Core 2.0 compared to .NET Framework. It begins with a little background on .NET Core framework and CLI   
 
 * setting up MVC
 * create middleware
